@@ -5,12 +5,21 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@canvasjs/vue-charts':
+    specifier: ^1.0.4
+    version: 1.0.4(typescript@5.5.4)
   '@element-plus/icons-vue':
     specifier: ^2.3.1
     version: 2.3.1(vue@3.4.34)
+  '@pinia/nuxt':
+    specifier: ^0.5.2
+    version: 0.5.2(typescript@5.5.4)(vue@3.4.34)
   nuxt:
     specifier: ^3.12.4
     version: 3.12.4(eslint@9.8.0)(typescript@5.5.4)(vite@5.3.5)
+  pinia:
+    specifier: ^2.2.0
+    version: 2.2.0(typescript@5.5.4)(vue@3.4.34)
   postcss-custom-properties:
     specifier: ^13.3.12
     version: 13.3.12(postcss@8.4.40)
@@ -383,6 +392,19 @@ packages:
       '@babel/helper-string-parser': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
+
+  /@canvasjs/charts@3.10.1:
+    resolution: {integrity: sha512-WDuciyEDx/Ac8YMrkFAAnY+U7dba0MieE6B5JvISQjXpxClSojaWzt7LN6f/Il0URztFY2OmuuRQzCcwoL8yxA==}
+    dev: false
+
+  /@canvasjs/vue-charts@1.0.4(typescript@5.5.4):
+    resolution: {integrity: sha512-PzOA8xeb/f68a39uoFZNn843dGPU36bsqmbO5DWjP7k6FwkK5AeGkYa/H3RHC02Xc6mG68vg9aFNj2Fyqhu4UQ==}
+    dependencies:
+      '@canvasjs/charts': 3.10.1
+      vue: 3.4.34(typescript@5.5.4)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /@cloudflare/kv-asset-handler@0.3.4:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
@@ -1682,6 +1704,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.7
+      napi-wasm: 1.1.0
     dev: false
     bundledDependencies:
       - napi-wasm
@@ -1734,6 +1757,20 @@ packages:
       '@parcel/watcher-win32-arm64': 2.4.1
       '@parcel/watcher-win32-ia32': 2.4.1
       '@parcel/watcher-win32-x64': 2.4.1
+    dev: false
+
+  /@pinia/nuxt@0.5.2(typescript@5.5.4)(vue@3.4.34):
+    resolution: {integrity: sha512-YvQqcv1LehSnH1OTC+9wU53UK+UxB45+vJXpc/RljJiSAfbEVGE+3NZ8WRsWC+YvL7A3FgtbmeuqhGka0lANJA==}
+    dependencies:
+      '@nuxt/kit': 3.12.4(magicast@0.3.4)
+      pinia: 2.2.0(typescript@5.5.4)(vue@3.4.34)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - magicast
+      - rollup
+      - supports-color
+      - typescript
+      - vue
     dev: false
 
   /@pkgjs/parseargs@0.11.0:
@@ -5566,6 +5603,10 @@ packages:
     hasBin: true
     dev: false
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: false
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -6165,6 +6206,24 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /pinia@2.2.0(typescript@5.5.4)(vue@3.4.34):
+    resolution: {integrity: sha512-iPrIh26GMqfpUlMOGyxuDowGmYousTecbTHFwT0xZ1zJvh23oQ+Cj99ZoPQA1TnUPhU6AuRPv6/drkTCJ0VHQA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      typescript: 5.5.4
+      vue: 3.4.34(typescript@5.5.4)
+      vue-demi: 0.14.10(vue@3.4.34)
+    dev: false
 
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
@@ -8096,7 +8155,6 @@ packages:
         optional: true
     dependencies:
       vue: 3.4.34(typescript@5.5.4)
-    dev: true
 
   /vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}

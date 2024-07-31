@@ -1,34 +1,34 @@
 <template>
-  <div>
-    <el-menu
-      default-active="2"
-      class="h-full w-[200px]"
-      @open="handleOpen"
-      @close="handleClose"
-    >
-      <el-sub-menu index="1">
-        <template #title>
-          <el-icon><ElIconLocation /></el-icon>
-          <span>Navigator One</span>
-        </template>
-        <el-menu-item-group title="Group One">
-          <el-menu-item index="1-1">item one</el-menu-item>
-          <el-menu-item index="1-2">item two</el-menu-item>
-        </el-menu-item-group>
-      </el-sub-menu>
-      <el-menu-item index="2">
-        <el-icon><ElIconMenu /></el-icon>
-        <span>Navigator Two</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <el-icon><ElIconDocument /></el-icon>
-        <span>Navigator Three</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <el-icon><ElIconSetting /></el-icon>
-        <span>Navigator Four</span>
-      </el-menu-item>
-    </el-menu>
+  <div class="flex flex-col">
+    <div class="bg-indigo-400 h-[60px] px-8 flex items-center">
+      <NuxtLink to="/" class="font-bold text-white" @click=""
+        >MRMuseum Dashboard</NuxtLink
+      >
+    </div>
+
+    <div class="flex flex-row">
+      <el-menu
+        default-active="2"
+        class="h-full w-[200px]"
+        :router="true"
+        @open="handleOpen"
+        @close="handleClose"
+      >
+        <el-menu-item index="user">
+          <el-icon><ElIconUser /></el-icon>
+          <span>使用者列表</span>
+        </el-menu-item>
+        <el-menu-item index="questionnaire">
+          <el-icon><ElIconDocument /></el-icon>
+          <span>問卷資料收集</span>
+        </el-menu-item>
+        <el-menu-item index="calendar">
+          <el-icon><ElIconCalendar /></el-icon>
+          <span>Calendar</span>
+        </el-menu-item>
+      </el-menu>
+      <NuxtPage class="flex-grow p-6" />
+    </div>
   </div>
 </template>
 
